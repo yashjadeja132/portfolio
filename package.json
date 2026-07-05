@@ -1,0 +1,28 @@
+{
+  "name": "yashrajsinh-jadeja-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Yashrajsinh Jadeja — Full Stack Developer & Team Lead. Next.js (App Router) with SSR and dynamic SEO.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "nodemailer": "^6.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}

@@ -1,0 +1,50 @@
+.footer {
+  background: var(--darker);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.inner {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: #e7edf6;
+}
+
+.role {
+  margin-top: 3px;
+  font-size: 13px;
+  color: var(--muted-2);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13.5px;
+}
+
+.link {
+  color: var(--on-dark-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.link:hover {
+  color: #fff;
+}
+
+.note {
+  width: 100%;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7a94;
+}

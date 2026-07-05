@@ -1,0 +1,95 @@
+.section {
+  padding: 96px 0;
+}
+
+.timeline {
+  margin-top: 44px;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 22px;
+}
+
+.markerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--accent-soft-border);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.markerCurrent {
+  animation: yjGlowPulse 4s ease-in-out infinite;
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(#d4ddeb, rgba(212, 221, 235, 0));
+  transform-origin: top;
+}
+
+.content {
+  padding-bottom: 48px;
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.jobTitle {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.company {
+  margin-top: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.points {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  list-style: none;
+}
+
+.point {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 8px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.dash {
+  color: #97a9c8;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 72px 0;
+  }
+}

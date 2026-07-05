@@ -1,0 +1,95 @@
+.section {
+  padding: 0 0 96px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 26px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.eduList {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eduRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-3);
+  padding-bottom: 16px;
+}
+.eduRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.eduTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.eduDetail {
+  margin-top: 3px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.eduPeriod {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #8d9ab1;
+  white-space: nowrap;
+}
+
+.langList {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lang {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-strong);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.langDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 0 0 72px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
