@@ -7,6 +7,16 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+// CORS: the deployed client lives on a different origin, so allow it to call
+// this API. Set CLIENT_ORIGIN to your frontend URL in production (defaults to "*").
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_ORIGIN || "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
 app.use(express.json({ limit: "12kb" }));
 
 /* ----------------------------------------------------------- Contact API */

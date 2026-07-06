@@ -14,7 +14,7 @@ export default defineConfig({
     port: 5173,
     // Forward API calls to the Express server during development.
     proxy: {
-      "/api": "http://localhost:4000",
+      "/api": "https://portfolio-api-sq70.onrender.com",
     },
   },
 });
