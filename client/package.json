@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n web,api -c green,blue \"vite\" \"node --watch api/index.js\"",
+    "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "start": "node api/index.js"
+    "start": "vite preview"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
