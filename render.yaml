@@ -1,0 +1,31 @@
+# Render Blueprint for the API (server/). The client deploys separately to
+# GitHub Pages via .github/workflows/deploy.yml.
+# Import at https://render.com → "New +" → "Blueprint".
+services:
+  - type: web
+    name: portfolio-api
+    runtime: node
+    rootDir: server
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      # Lock CORS to your GitHub Pages origin.
+      - key: CLIENT_ORIGIN
+        value: https://yashjadeja132.github.io
+      # Secrets — set these values in the Render dashboard.
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: CONTACT_TO
+        sync: false
+      - key: CONTACT_FROM
+        sync: false
