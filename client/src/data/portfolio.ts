@@ -133,7 +133,7 @@ export const navItems: NavItem[] = [
 /* -------------------------------------------------------------- Snapshot */
 
 export const snapshot: SnapshotStat[] = [
-  { value: "2.5+ Years", label: "Full-stack development experience" },
+  { value: "Nearly 3 Years", label: "Full-stack development experience" },
   { value: "MERN & MEVN", label: "React.js, Vue.js and Node.js" },
   {
     value: "5 Payment Gateways",
@@ -148,7 +148,7 @@ export const snapshot: SnapshotStat[] = [
 /* ----------------------------------------------------------------- About */
 
 export const aboutParagraphs: string[] = [
-  "I am a Full Stack Developer and Team Lead with 2.5+ years of experience developing SaaS applications using React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB.",
+  "I am a Full Stack Developer and Team Lead with nearly 3 years of experience developing SaaS applications using React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB.",
   "My work includes REST API development, authentication, role-based access control, payment gateway integrations, recurring billing, Firebase services, push notifications, database design, production deployment, complex debugging, code reviews, project planning, and client communication.",
   "I enjoy solving real business problems, building maintainable application architecture, supporting development teams, and delivering reliable production-ready features.",
 ];
@@ -207,7 +207,7 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   { name: "Databases", items: ["MongoDB", "MySQL"] },
-  { name: "Familiar With", items: ["PostgreSQL", "Redis", "Nginx"] },
+  { name: "Familiar With", items: ["PostgreSQL", "Redis"] },
   {
     name: "Payment Gateways",
     items: ["Stripe", "Razorpay", "Cashfree", "NMI", "Dejavoo"],
@@ -222,6 +222,7 @@ export const skillGroups: SkillGroup[] = [
       "VS Code",
       "Firebase Console",
       "Google Play Console",
+      "Nginx",
       "Production Deployment",
     ],
   },
@@ -234,17 +235,16 @@ export const experience: ExperienceRole[] = [
     title: "Full Stack Developer & Team Lead",
     company: "Sparrow Softtech",
     location: "Bhavnagar, India",
-    period: "Jan 2024 – Present",
-    current: true,
+    period: "Jan 2024 – Aug 2026",
     points: [
-      "Develop and maintain full-stack SaaS applications across MERN and MEVN environments.",
-      "Design and maintain REST APIs with authentication, authorization, and role-based access control.",
-      "Integrate Stripe, Razorpay, Cashfree, NMI, and Dejavoo payment gateways.",
-      "Build reusable and responsive frontend components.",
-      "Lead developers through planning, task allocation, technical guidance, code reviews, and debugging.",
-      "Manage production builds, deployments, releases, and production issue resolution.",
-      "Implement Firebase services and push notifications.",
-      "Communicate directly with clients to analyse requirements and deliver production-ready solutions.",
+      "Developed and maintained full-stack SaaS applications across MERN and MEVN environments.",
+      "Designed and maintained REST APIs with authentication, authorization, and role-based access control.",
+      "Integrated Stripe, Razorpay, Cashfree, NMI, and Dejavoo payment gateways, including recurring-payment and automated-billing workflows.",
+      "Built reusable and responsive frontend components.",
+      "Led developers through planning, task allocation, technical guidance, code reviews, and debugging.",
+      "Managed production builds, deployments, releases, and production issue resolution.",
+      "Implemented Firebase services and push notifications.",
+      "Communicated directly with clients to analyse requirements and deliver production-ready solutions.",
     ],
   },
   {
@@ -269,7 +269,7 @@ export const projects: Project[] = [
     num: "01",
     name: "Gym Management System",
     company: "Sparrow Softtech",
-    timeline: "Jan 2025 – Present",
+    timeline: "Jan 2025 – Aug 2026",
     role: "Full Stack Developer & Team Lead",
     stack: ["Vue.js", "Node.js", "Express.js", "MongoDB", "Pinia", "NMI", "MEVN"],
     description:
@@ -304,7 +304,7 @@ export const projects: Project[] = [
     architecture:
       "Vue.js single-page application with Pinia state management, backed by a Node.js/Express REST API with role-based middleware, MongoDB for data, and NMI for recurring payment processing.",
     result:
-      "The platform is in active development and production use. Leading it end to end strengthened my ability to translate client requirements into a technical plan and deliver a multi-role SaaS product with a team.",
+      "The platform reached production use across all six roles. Leading it end to end strengthened my ability to translate client requirements into a technical plan and deliver a multi-role SaaS product with a team.",
   },
   {
     id: "ems",
@@ -483,7 +483,7 @@ export const education: EducationEntry[] = [
   },
   {
     title: "Higher Secondary Certificate, Science — A Group",
-    detail: "Percentage as per resume",
+    detail: "Percentage: 79%",
     period: "May 2019 – May 2021",
   },
   {
