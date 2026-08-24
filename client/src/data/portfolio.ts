@@ -226,6 +226,10 @@ export const skillGroups: SkillGroup[] = [
       "Production Deployment",
     ],
   },
+  {
+    name: "Vibe Coding",
+    items: ["Cursor", "ChatGPT", "Claude"],
+  },
 ];
 
 /* ------------------------------------------------------------ Experience */
@@ -375,9 +379,39 @@ export const projects: Project[] = [
       "Delivered through planning, code reviews, and team coordination — a project that sharpened my approach to leading ledger-driven, correctness-critical systems.",
   },
   {
+    id: "contracts",
+    slug: "contract-management-system",
+    num: "04",
+    name: "Contract Management System",
+    company: "Sparrow Softtech",
+    timeline: "Mar 2024 – Aug 2024",
+    role: "Full Stack Developer & Team Lead",
+    stack: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB"],
+    description:
+      "A SaaS platform for managing contracts, quotes, invoices, payments, and customer records.",
+    problem:
+      "Businesses handling contracts, quotes, and invoicing manually across spreadsheets and email lose track of approvals, payment status, and customer history. The platform centralises the contract lifecycle, quoting, invoicing, and payments in one system.",
+    roles: ["Administrators", "Sales / Account Managers", "Customers"],
+    modules: [
+      "Contract management",
+      "Quote generation",
+      "Invoicing",
+      "Payment processing",
+      "Customer management",
+    ],
+    contribution:
+      "Implemented the frontend UI and core modules for contracts, quotes, invoices, payments, and customer management, and integrated the payment gateway, while leading project planning and team coordination.",
+    challenges:
+      "Keeping quotes, contracts, and invoices consistent as records moved through the approval and billing lifecycle, and integrating the payment gateway reliably for customer payments.",
+    architecture:
+      "React.js frontend with Redux state management on a Node.js/Express REST API, with MongoDB modelling contracts, quotes, invoices, payments, and customers.",
+    result:
+      "Strengthened my experience building document-lifecycle-driven SaaS modules and integrating payment processing end to end.",
+  },
+  {
     id: "bed",
     slug: "bed-configurator",
-    num: "04",
+    num: "05",
     name: "Bed Configurator",
     company: "Sparrow Softtech",
     timeline: "Jan 2024 – Mar 2024",
@@ -407,7 +441,7 @@ export const projects: Project[] = [
   {
     id: "cms",
     slug: "complaint-management-system",
-    num: "05",
+    num: "06",
     name: "Complaint Management System",
     company: "Sparrow Softtech",
     timeline: "Oct 2023 – Dec 2023",
