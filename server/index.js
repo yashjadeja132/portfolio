@@ -45,11 +45,18 @@ const escapeHtml = (s) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 
+// Simple stage logger: shows exactly where a contact request stops.
+const log = (id, msg, extra = "") =>
+  console.log(`[contact ${id}] ${new Date().toISOString()} ${msg}`, extra);
+
 app.post("/api/contact", async (req, res) => {
+  const id = Math.random().toString(36).slice(2, 8);
   const body = req.body ?? {};
+  log(id, "1/6 request received", `origin=${req.headers.origin || "none"}`);
 
   // Honeypot: silently accept bots.
   if (typeof body.company === "string" && body.company.trim() !== "") {
+    log(id, "honeypot filled, ignored as bot");
     return res.json({ ok: true });
   }
 
@@ -64,15 +71,23 @@ app.post("/api/contact", async (req, res) => {
   if (subject.length < 2) problems.push("a subject (at least 2 characters)");
   if (message.length < 10) problems.push("a message (at least 10 characters)");
   if (problems.length) {
+    log(id, "2/6 validation FAILED", problems.join("; "));
     return res
       .status(422)
       .json({ ok: false, error: `Please provide ${problems.join(", ")}.` });
   }
 
+  log(id, "2/6 validation ok");
+
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE, CONTACT_TO, CONTACT_FROM } =
     process.env;
 
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+    log(
+      id,
+      "3/6 SMTP config MISSING",
+      `host=${!!SMTP_HOST} user=${!!SMTP_USER} pass=${!!SMTP_PASS}`,
+    );
     return res.status(503).json({
       ok: false,
       error: `Email delivery isn’t configured yet. Please email me directly at ${CONTACT_EMAIL}.`,
@@ -87,8 +102,17 @@ app.post("/api/contact", async (req, res) => {
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
+  log(
+    id,
+    "3/6 SMTP config found",
+    `host=${SMTP_HOST} port=${port} secure=${transporter.options.secure} user=${SMTP_USER}`,
+  );
+
   try {
-    await transporter.sendMail({
+    log(id, "4/6 verifying SMTP connection and login...");
+    await transporter.verify();
+    log(id, "5/6 SMTP login ok, sending mail...");
+    const info = await transporter.sendMail({
       from: CONTACT_FROM || `Portfolio Contact <${SMTP_USER}>`,
       to: CONTACT_TO || CONTACT_EMAIL,
       replyTo: `${name} <${email}>`,
@@ -105,8 +129,14 @@ app.post("/api/contact", async (req, res) => {
           )}</p>
         </div>`,
     });
+    log(id, "6/6 mail SENT", `messageId=${info.messageId} response=${info.response}`);
     return res.json({ ok: true });
   } catch (err) {
+    log(
+      id,
+      "FAILED at SMTP step",
+      `code=${err.code || "-"} command=${err.command || "-"} responseCode=${err.responseCode || "-"} message=${err.message}`,
+    );
     console.error("Contact form send failed:", err);
     return res.status(502).json({
       ok: false,
