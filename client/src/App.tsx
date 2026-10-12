@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Nav from "@/components/Nav/Nav";
 import Footer from "@/components/Footer/Footer";
+import BackToTop from "@/components/BackToTop/BackToTop";
 import ScrollManager from "@/components/ScrollManager";
 import Home from "@/pages/Home";
 import ProjectPage from "@/pages/ProjectPage";
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <BackToTop />
     </>
   );
 }

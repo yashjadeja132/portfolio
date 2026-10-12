@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import NotFound from "./NotFound";
 import { getProjectBySlug } from "@/data/portfolio";
 import { projectJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
-import { siteConfig, absoluteUrl } from "@/lib/site";
+import { siteConfig, absoluteUrl, withBasePath } from "@/lib/site";
 import styles from "./ProjectPage.module.css";
 
 export default function ProjectPage() {
@@ -74,6 +74,17 @@ export default function ProjectPage() {
               <p className={styles.blockText}>{narrative[0].text}</p>
             </section>
 
+            {project.screenshots?.map((shot) => (
+              <figure key={shot.src} className={styles.shot}>
+                <img
+                  src={withBasePath(shot.src)}
+                  alt={shot.alt}
+                  className={styles.shotImg}
+                  loading="lazy"
+                />
+              </figure>
+            ))}
+
             <section className={styles.block}>
               <p className={styles.blockLabel}>{narrative[1].label}</p>
               <p className={styles.blockText}>{narrative[1].text}</p>
@@ -112,8 +123,9 @@ export default function ProjectPage() {
             ))}
 
             <p className={styles.confidential}>
-              Screenshots and source code are not publicly available due to
-              confidentiality.
+              {project.screenshots?.length
+                ? "Source code is not publicly available due to confidentiality."
+                : "Screenshots and source code are not publicly available due to confidentiality."}
             </p>
           </div>
 

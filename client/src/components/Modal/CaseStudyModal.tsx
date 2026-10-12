@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { useModal } from "@/context/ModalContext";
 import { projects } from "@/data/portfolio";
+import { withBasePath } from "@/lib/site";
 import ModalShell from "./ModalShell";
 import styles from "./Modal.module.css";
 
@@ -49,6 +50,17 @@ export default function CaseStudyModal() {
           <p className={styles.blockLabel}>{blocks[0].label}</p>
           <p className={styles.blockText}>{blocks[0].text}</p>
         </section>
+
+        {project.screenshots?.map((shot) => (
+          <figure key={shot.src} className={styles.shot}>
+            <img
+              src={withBasePath(shot.src)}
+              alt={shot.alt}
+              className={styles.shotImg}
+              loading="lazy"
+            />
+          </figure>
+        ))}
 
         <section className={styles.block}>
           <p className={styles.blockLabel}>{blocks[1].label}</p>
@@ -99,8 +111,9 @@ export default function CaseStudyModal() {
         ))}
 
         <p className={styles.confidential}>
-          Screenshots and source code are not publicly available due to
-          confidentiality.
+          {project.screenshots?.length
+            ? "Source code is not publicly available due to confidentiality."
+            : "Screenshots and source code are not publicly available due to confidentiality."}
         </p>
 
         <Link

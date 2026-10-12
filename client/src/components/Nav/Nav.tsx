@@ -10,24 +10,44 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  // Track the section in view (home only) to highlight the active nav item.
+  // Highlight the nav item of the section in view (home only). Sections are
+  // read on every scroll, so newly added sections are always picked up.
   useEffect(() => {
     if (!onHome) return;
-    const sections = Array.from(
-      document.querySelectorAll<HTMLElement>("main section[id]"),
-    );
-    if (!sections.length) return;
+    let raf = 0;
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((en) => {
-          if (en.isIntersecting) setActiveSection(en.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px" },
-    );
-    sections.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    const update = () => {
+      raf = 0;
+      const sections = Array.from(
+        document.querySelectorAll<HTMLElement>("main section[id]"),
+      );
+      if (!sections.length) return;
+
+      const line = window.innerHeight * 0.4;
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+
+      let current = sections[0].id;
+      for (const el of sections) {
+        if (el.getBoundingClientRect().top <= line) current = el.id;
+      }
+      if (atBottom) current = sections[sections.length - 1].id;
+      setActiveSection(current);
+    };
+
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, [onHome]);
 
   // Close the mobile menu on Escape.

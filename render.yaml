@@ -13,7 +13,7 @@ services:
     envVars:
       # Lock CORS to your GitHub Pages origin.
       - key: CLIENT_ORIGIN
-        value: https://yashjadeja132.github.io
+        value: https://yashrajsinhjadeja.com,https://www.yashrajsinhjadeja.com,https://yashjadeja132.github.io
       # Secrets — set these values in the Render dashboard.
       - key: SMTP_HOST
         sync: false

@@ -9,8 +9,20 @@ const PORT = process.env.PORT || 4000;
 
 // CORS: the deployed client lives on a different origin, so allow it to call
 // this API. Set CLIENT_ORIGIN to your frontend URL in production (defaults to "*").
+// CLIENT_ORIGIN may hold several origins separated by commas.
+const ALLOWED_ORIGINS = (process.env.CLIENT_ORIGIN || "*")
+  .split(",")
+  .map((o) => o.trim())
+  .filter(Boolean);
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", process.env.CLIENT_ORIGIN || "*");
+  const origin = req.headers.origin;
+  const allow = ALLOWED_ORIGINS.includes("*")
+    ? "*"
+    : ALLOWED_ORIGINS.includes(origin)
+      ? origin
+      : ALLOWED_ORIGINS[0];
+  res.setHeader("Access-Control-Allow-Origin", allow);
+  res.setHeader("Vary", "Origin");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   if (req.method === "OPTIONS") return res.sendStatus(204);

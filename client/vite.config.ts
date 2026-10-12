@@ -3,10 +3,9 @@ import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
-  // GitHub Pages serves this project site under /portfolio/ in production.
-  // Dev stays at the root ("/").
-  base: command === "build" ? "/portfolio/" : "/",
+export default defineConfig(() => ({
+  // Served from the root of the custom domain (yashrajsinhjadeja.com).
+  base: "/",
   plugins: [react()],
   resolve: {
     alias: {

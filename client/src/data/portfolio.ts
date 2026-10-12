@@ -55,6 +55,7 @@ export interface Project {
   challenges: string;
   architecture: string;
   result: string;
+  screenshots?: { src: string; alt: string }[];
 }
 
 export interface Award {
@@ -84,7 +85,7 @@ export const profile = {
   title: "Full Stack Developer & Team Lead",
   initials: "YJ",
   availability:
-    "Open to Full Stack Developer & Software Engineer opportunities",
+    "Open to remote contract projects with US teams",
   heading: "Hi, I’m Yashrajsinh Jadeja.",
   intro:
     "I build scalable SaaS applications, secure REST APIs, responsive web and mobile experiences, payment workflows, and production-ready systems using MERN and MEVN technologies.",
@@ -108,7 +109,7 @@ export const profile = {
     "Payment Integrations",
     "SaaS",
   ],
-  worksFor: "Sparrow Softtech",
+  worksFor: "Kanzariya Pharmaceutical Pvt. Ltd.",
   knowsLanguage: ["English", "Hindi", "Gujarati"],
 } as const;
 
@@ -126,6 +127,7 @@ export const navItems: NavItem[] = [
   { label: "Skills", id: "skills" },
   { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
+  { label: "Services", id: "services" },
   { label: "Awards", id: "awards" },
   { label: "Contact", id: "contact" },
 ];
@@ -133,7 +135,7 @@ export const navItems: NavItem[] = [
 /* -------------------------------------------------------------- Snapshot */
 
 export const snapshot: SnapshotStat[] = [
-  { value: "Nearly 3 Years", label: "Full-stack development experience" },
+  { value: "3 Years", label: "Full-stack development experience" },
   { value: "MERN & MEVN", label: "React.js, Vue.js and Node.js" },
   {
     value: "5 Payment Gateways",
@@ -148,7 +150,7 @@ export const snapshot: SnapshotStat[] = [
 /* ----------------------------------------------------------------- About */
 
 export const aboutParagraphs: string[] = [
-  "I am a Full Stack Developer and Team Lead with nearly 3 years of experience developing SaaS applications using React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB.",
+  "I am a Full Stack Developer and Team Lead with 3 years of experience developing SaaS applications using React.js, Next.js, Vue.js, Node.js, Express.js, and MongoDB.",
   "My work includes REST API development, authentication, role-based access control, payment gateway integrations, recurring billing, Firebase services, push notifications, database design, production deployment, complex debugging, code reviews, project planning, and client communication.",
   "I enjoy solving real business problems, building maintainable application architecture, supporting development teams, and delivering reliable production-ready features.",
 ];
@@ -236,6 +238,20 @@ export const skillGroups: SkillGroup[] = [
 
 export const experience: ExperienceRole[] = [
   {
+    title: "Full Stack Developer",
+    company: "Kanzariya Pharmaceutical Pvt. Ltd.",
+    location: "Jamnagar, India",
+    period: "Sep 2026 – Present",
+    current: true,
+    points: [
+      "Building internal business applications for a pharmaceutical company, including an employee management system and a sales force automation platform.",
+      "Developed Butterfly - EMS, a redesigned employee management system with a new UI and company-specific changes.",
+      "Developing Disha - SFA, a sales force automation platform with a React admin web app, a Node.js/Express API and a React Native app for field teams.",
+      "Implemented role-based permissions, territory hierarchy, geo-fenced attendance, approval workflows, payroll and reporting modules.",
+      "Using AI-assisted (vibe coding) workflows with Cursor, ChatGPT and Claude to deliver full-stack features faster, while reviewing and testing all generated code.",
+    ],
+  },
+  {
     title: "Full Stack Developer & Team Lead",
     company: "Sparrow Softtech",
     location: "Bhavnagar, India",
@@ -268,12 +284,110 @@ export const experience: ExperienceRole[] = [
 
 export const projects: Project[] = [
   {
+    id: "disha",
+    slug: "disha-sfa",
+    num: "01",
+    name: "Disha - SFA",
+    company: "Kanzariya Pharmaceutical Pvt. Ltd.",
+    timeline: "Oct 2026 – Present",
+    role: "Full Stack Developer",
+    stack: [
+      "React.js",
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "AI-Assisted Development",
+    ],
+    description:
+      "A sales force automation platform for pharmaceutical field teams, with a web admin panel and an Android app for medical representatives covering doctor visits, tour plans, expenses, attendance, orders, sales, targets, approvals and payroll.",
+    problem:
+      "Pharma field teams track doctor and chemist visits, tour plans, expenses, orders and attendance across calls, spreadsheets and paper reports, so managers have little visibility into what the field team actually did. The platform brings these workflows into one system with verified check-ins, approvals and reporting.",
+    roles: [
+      "Medical Representatives",
+      "Area, Regional and Zonal Managers",
+      "Administrators",
+      "Super Administrators",
+    ],
+    modules: [
+      "Doctor and chemist masters",
+      "HQ, city, area and route territory setup",
+      "Daily call reports and visit tracking",
+      "Tour plans with approvals",
+      "Expense claims with TA/DA rates",
+      "Geo-fenced attendance with work selfie",
+      "Leave management and holidays",
+      "POB orders, primary and secondary sales",
+      "Targets and incentives",
+      "Payroll, salary templates and salary slips",
+      "Dynamic roles with web and mobile permissions",
+      "Reports with PDF and Excel export",
+      "Device lock, notices, documents and e-detailing",
+    ],
+    contribution:
+      "Building the platform end to end with AI-assisted (vibe coding) workflows: the React admin web app, the Node.js/Express API, the React Native Android app, role-based permissions, territory and approval workflows, and Android release builds.",
+    challenges:
+      "Designing a configurable permission system shared by web and mobile, modelling a territory hierarchy used by doctors, chemists and team members, verifying field activity with geo-fenced check-ins, and reviewing, testing and hardening AI-generated code with API and mobile test suites.",
+    architecture:
+      "React (Vite) admin web app and a React Native Android app on a shared Node.js/Express REST API with JWT authentication, role-based middleware and MongoDB. Redis and BullMQ run background email and notification jobs.",
+    result:
+      "Built working web and Android apps quickly with AI-assisted development, while keeping architecture decisions, code review and testing in my own hands.",
+    screenshots: [
+      {
+        src: "/projects/disha-dashboard.jpg",
+        alt: "Disha - SFA admin dashboard with daily call reports, tour approvals, expense breakdown and activity feed",
+      },
+    ],
+  },
+  {
+    id: "butterfly",
+    slug: "butterfly-ems",
+    num: "02",
+    name: "Butterfly - EMS",
+    company: "Kanzariya Pharmaceutical Pvt. Ltd.",
+    timeline: "Sep 2026 – Oct 2026",
+    role: "Full Stack Developer",
+    stack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AI-Assisted Development",
+    ],
+    description:
+      "An employee management system for Kanzariya Pharmaceutical, rebuilt from my earlier EMS product with a new UI and the changes the company required.",
+    problem:
+      "Handling attendance, leave, shifts and payroll manually leads to errors in salary calculation and slow monthly reporting. The company needed my earlier EMS adapted to its own HR processes, with a fresh interface.",
+    roles: ["Employees", "HR / Administrators", "Managers"],
+    modules: [
+      "Employee management",
+      "Role management",
+      "Shift scheduling",
+      "Attendance",
+      "Leave management",
+      "Payroll",
+      "Indian salary calculation",
+      "Monthly reports",
+      "Role-based access control",
+    ],
+    contribution:
+      "Redesigned the user interface and adapted the existing EMS platform to the company's requirements using AI-assisted (vibe coding) workflows, covering employee, attendance, leave, shift, payroll and reporting modules.",
+    challenges:
+      "Adapting a proven product to a different company's HR policies and salary rules without breaking existing workflows, and reviewing AI-generated interface and code changes for correctness.",
+    architecture:
+      "React.js web application on a Node.js/Express REST API with role-based access control and MongoDB, the same architecture as the earlier EMS with a new interface layer.",
+    result:
+      "Delivered a company-ready version of an existing product in about two months, showing how I reuse proven architecture and speed up delivery with AI-assisted development.",
+  },
+  {
     id: "gym",
     slug: "gym-management-system",
-    num: "01",
+    num: "03",
     name: "Gym Management System",
     company: "Sparrow Softtech",
-    timeline: "Jan 2025 – Aug 2026",
+    timeline: "Jan 2025 – Sep 2026",
     role: "Full Stack Developer & Team Lead",
     stack: ["Vue.js", "Node.js", "Express.js", "MongoDB", "Pinia", "NMI", "MEVN"],
     description:
@@ -313,10 +427,10 @@ export const projects: Project[] = [
   {
     id: "ems",
     slug: "employee-management-system",
-    num: "02",
+    num: "04",
     name: "Employee Management System",
     company: "Sparrow Softtech",
-    timeline: "Nov 2025 – Mar 2026",
+    timeline: "Nov 2025 – Sep 2026",
     role: "Full Stack Developer",
     stack: ["React.js", "React Native", "Node.js", "Express.js", "MongoDB"],
     description:
@@ -347,9 +461,42 @@ export const projects: Project[] = [
       "Deepened my experience shipping the same product surface across web and mobile, and in modelling payroll domain logic that must be exactly right.",
   },
   {
+    id: "keyresumes",
+    slug: "keyresumes-io",
+    num: "05",
+    name: "keyresumes.io",
+    company: "Sparrow Softtech",
+    timeline: "Jun 2025 – Sep 2025",
+    role: "Full Stack Developer",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
+    description:
+      "A web platform that helps users create professional resumes, cover letters, and public career profiles.",
+    problem:
+      "Job seekers often rebuild their resume and cover letter from scratch for every application. The platform lets users create professional documents from reusable templates and share a public career profile.",
+    roles: ["Job seekers", "Public profile visitors"],
+    modules: [
+      "Dynamic resume generation",
+      "Cover-letter generation",
+      "Reusable templates",
+      "User-controlled content and formatting",
+      "Authentication",
+      "Profile management",
+      "Public profile sharing",
+      "Responsive interface",
+    ],
+    contribution:
+      "Contributed across frontend development, backend APIs, database design, debugging and deployment, including the resume and cover-letter generation workflows and reusable templates.",
+    challenges:
+      "Keeping templates flexible while giving users control over content and formatting, and keeping generated documents consistent across screen sizes.",
+    architecture:
+      "React.js frontend on a Node.js/Express REST API with MongoDB storing users, profiles, templates, and documents.",
+    result:
+      "A full product build from interface to deployment that strengthened my experience with template-driven, user-generated content.",
+  },
+  {
     id: "rental",
     slug: "rental-management-system",
-    num: "03",
+    num: "06",
     name: "Rental Management System",
     company: "Sparrow Softtech",
     timeline: "Aug 2024 – Dec 2024",
@@ -381,16 +528,16 @@ export const projects: Project[] = [
   {
     id: "contracts",
     slug: "contract-management-system",
-    num: "04",
+    num: "07",
     name: "Contract Management System",
     company: "Sparrow Softtech",
-    timeline: "Mar 2024 – Aug 2024",
+    timeline: "Apr 2024 – Aug 2024",
     role: "Full Stack Developer & Team Lead",
     stack: ["React.js", "Redux", "Node.js", "Express.js", "MongoDB"],
     description:
-      "A SaaS platform for managing contracts, quotes, invoices, payments, and customer records.",
+      "A contract management platform for a service company, covering contracts with customers for services delivered by field workers such as AC repair technicians, along with quotes, invoices, payments, and customer records.",
     problem:
-      "Businesses handling contracts, quotes, and invoicing manually across spreadsheets and email lose track of approvals, payment status, and customer history. The platform centralises the contract lifecycle, quoting, invoicing, and payments in one system.",
+      "A service company that sends workers to customers for jobs such as AC repairing needs clear contracts for each service. Managing those contracts, quotes, and invoices manually across spreadsheets and email loses track of approvals, payment status, and customer history. The platform centralises the contract lifecycle, quoting, invoicing, and payments in one system.",
     roles: ["Administrators", "Sales / Account Managers", "Customers"],
     modules: [
       "Contract management",
@@ -400,7 +547,7 @@ export const projects: Project[] = [
       "Customer management",
     ],
     contribution:
-      "Implemented the frontend UI and core modules for contracts, quotes, invoices, payments, and customer management, and integrated the payment gateway, while leading project planning and team coordination.",
+      "Designed and built the complete software UI, designed the database, and led the team through planning and delivery of the contract, quote, invoice, payment, and customer management modules, including the payment gateway integration.",
     challenges:
       "Keeping quotes, contracts, and invoices consistent as records moved through the approval and billing lifecycle, and integrating the payment gateway reliably for customer payments.",
     architecture:
@@ -411,7 +558,7 @@ export const projects: Project[] = [
   {
     id: "bed",
     slug: "bed-configurator",
-    num: "05",
+    num: "08",
     name: "Bed Configurator",
     company: "Sparrow Softtech",
     timeline: "Jan 2024 – Mar 2024",
@@ -441,7 +588,7 @@ export const projects: Project[] = [
   {
     id: "cms",
     slug: "complaint-management-system",
-    num: "06",
+    num: "09",
     name: "Complaint Management System",
     company: "Sparrow Softtech",
     timeline: "Oct 2023 – Dec 2023",
@@ -473,6 +620,71 @@ export const projects: Project[] = [
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
 }
+
+/* -------------------------------------------------------------- Services */
+
+export interface ServiceItem {
+  mark: string;
+  title: string;
+  desc: string;
+}
+
+export const services: ServiceItem[] = [
+  {
+    mark: "</>",
+    title: "SaaS web applications",
+    desc: "Multi-role platforms, admin dashboards and customer portals built with React or Vue, Node.js and MongoDB.",
+  },
+  {
+    mark: "$",
+    title: "Payment integrations",
+    desc: "Stripe, Razorpay, Cashfree, NMI and Dejavoo, including recurring billing and automated billing workflows.",
+  },
+  {
+    mark: "RN",
+    title: "Mobile apps",
+    desc: "React Native apps that use the same API as your web platform, with push notifications through Firebase.",
+  },
+  {
+    mark: "{ }",
+    title: "Backend and APIs",
+    desc: "Secure REST APIs, authentication, role-based access, database design and production deployment.",
+  },
+];
+
+export const workSteps: { title: string; desc: string }[] = [
+  {
+    title: "Understand",
+    desc: "We discuss your goal, users and must-have features. I write a short plan with milestones.",
+  },
+  {
+    title: "Build",
+    desc: "I build in small milestones, so you can see real progress early.",
+  },
+  {
+    title: "Review",
+    desc: "After each milestone you see a demo and give feedback, and I adjust.",
+  },
+  {
+    title: "Launch and support",
+    desc: "Production deployment, handover notes and bug-fix support after launch.",
+  },
+];
+
+export const workFacts: { label: string; value: string }[] = [
+  {
+    label: "Time zone",
+    value: "Based in India (IST, UTC+5:30). I can overlap with US hours by agreement.",
+  },
+  {
+    label: "Communication",
+    value: "Clear written updates, plus short video calls when needed.",
+  },
+  {
+    label: "Engagement",
+    value: "Remote contract work, on an hourly or fixed-scope basis.",
+  },
+];
 
 /* ---------------------------------------------------------------- Awards */
 

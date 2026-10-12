@@ -7,7 +7,7 @@ export default function Awards() {
     <section id="awards" className={styles.section}>
       <div className="container">
         <p className="eyebrow" data-reveal>
-          05 — Awards &amp; Recognition
+          06 — Awards &amp; Recognition
         </p>
         <h2 className="section-title" data-reveal data-reveal-delay="1">
           Recognised for delivery and dedication.

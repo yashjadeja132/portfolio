@@ -29,11 +29,11 @@ export default function Contact() {
     <section id="contact" className={styles.section}>
       <div className={`container ${styles.grid}`}>
         <div data-reveal="left">
-          <p className={styles.eyebrow}>06 — Contact</p>
+          <p className={styles.eyebrow}>07 — Contact</p>
           <h2 className={styles.title}>Let’s build something meaningful.</h2>
           <p className={styles.lead}>
-            I am open to Full Stack Developer, Software Engineer, MERN, React.js,
-            Vue.js, and Node.js opportunities.
+            I am open to remote contract projects with US teams, including MERN,
+            React.js, Vue.js, Node.js and payment-integration work.
           </p>
 
           <div className={styles.details}>

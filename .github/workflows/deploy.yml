@@ -32,7 +32,7 @@ jobs:
         run: npm run build
         env:
           # Public build-time config (not secrets).
-          VITE_SITE_URL: https://yashjadeja132.github.io/portfolio
+          VITE_SITE_URL: https://yashrajsinhjadeja.com
           VITE_API_URL: https://portfolio-api-sq70.onrender.com
       - name: SPA fallback (deep links) + skip Jekyll
         run: |
