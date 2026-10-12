@@ -33,7 +33,7 @@ jobs:
         env:
           # Public build-time config (not secrets).
           VITE_SITE_URL: https://yashrajsinhjadeja.com
-          VITE_API_URL: https://portfolio-api-sq70.onrender.com
+          VITE_API_URL: https://api.yashrajsinhjadeja.com
       - name: SPA fallback (deep links) + skip Jekyll
         run: |
           cp dist/index.html dist/404.html
