@@ -284,9 +284,74 @@ export const experience: ExperienceRole[] = [
 
 export const projects: Project[] = [
   {
+    id: "erp",
+    slug: "distropharma-erp",
+    num: "01",
+    name: "DistroPharma ERP",
+    company: "Personal project",
+    timeline: "Oct 2026 – Present",
+    role: "Full Stack Developer",
+    stack: [
+      "React.js",
+      "React Native",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Redis",
+      "BullMQ",
+      "JWT",
+    ],
+    description:
+      "A multi-tenant ERP for pharmaceutical distributors. It covers masters, purchase, sales, stock, accounts and reports, with separate data for each company and role-based permissions.",
+    problem:
+      "Pharma distributors track batches, expiry dates, free scheme goods, GST and customer credit in separate tools and spreadsheets. This causes stock mistakes, wrong GST totals and late payments. DistroPharma ERP keeps these in one system where stock and money always match.",
+    roles: ["Administrators", "Staff", "Viewers", "Custom roles"],
+    modules: [
+      "Party master: C&F, stockist, chemist, doctor, supplier",
+      "Batch master with MRP, PTD, PTS and PTR prices",
+      "Purchase orders with approval, purchase invoices and returns",
+      "Quotations, proforma invoices, sales invoices and credit notes",
+      "Free quantity (scheme goods) and expiry or breakage entries",
+      "GST with CGST/SGST and IGST, TCS and round-off",
+      "Credit control: limits, credit days and auto-lock",
+      "Receipts, payments, expenses and journals",
+      "Ledger, outstanding with ageing and GST registers",
+      "Stock report and 16 registers with CSV export",
+      "Per-module permission manager and approval queues",
+      "CSV data import, A4 print, email and WhatsApp sharing",
+      "React Native mobile app for approvals and quick lookups",
+    ],
+    contribution:
+      "Designing and building the whole product myself: the React web app, the Node.js/Express API, the database design, the permission system, background email jobs, the React Native mobile app and a 250-test server test suite.",
+    challenges:
+      "Keeping stock exact when many users post at the same time, so nothing is oversold. Keeping every company's data separate. Locking posted documents and cancelling instead of editing, so the audit trail stays true. Applying Indian GST rules and financial-year document numbers.",
+    architecture:
+      "React (Vite) web app and a React Native app on one Node.js/Express REST API with JWT authentication. MongoDB with Mongoose, and per-company data isolation. Stock is a ledger with atomic per-batch balances. Redis and BullMQ send emails in the background. The web app and API can be built into one server file and run on one port.",
+    result:
+      "A working ERP with 250 automated tests. The server checks all totals, GST and permissions, so the screen never decides them. The screenshots below use demo data only.",
+    screenshots: [
+      {
+        src: "/projects/erp-dashboard.jpg",
+        alt: "DistroPharma ERP dashboard with sales, receivables, inventory value, low stock and near-expiry batches (demo data)",
+      },
+      {
+        src: "/projects/erp-invoice-detail.jpg",
+        alt: "DistroPharma ERP sales invoice with batch, expiry, MRP, free quantity and IGST totals (demo data)",
+      },
+      {
+        src: "/projects/erp-stock-report.jpg",
+        alt: "DistroPharma ERP stock report with batch-wise stock, expiry status and minimum stock alerts (demo data)",
+      },
+      {
+        src: "/projects/erp-permissions.jpg",
+        alt: "DistroPharma ERP permission manager with view, create, edit, delete and approve rights per module (demo data)",
+      },
+    ],
+  },
+  {
     id: "disha",
     slug: "disha-sfa",
-    num: "01",
+    num: "02",
     name: "Disha - SFA",
     company: "Kanzariya Pharmaceutical Pvt. Ltd.",
     timeline: "Oct 2026 – Present",
@@ -344,7 +409,7 @@ export const projects: Project[] = [
   {
     id: "butterfly",
     slug: "butterfly-ems",
-    num: "02",
+    num: "03",
     name: "Butterfly - EMS",
     company: "Kanzariya Pharmaceutical Pvt. Ltd.",
     timeline: "Sep 2026 – Oct 2026",
@@ -384,7 +449,7 @@ export const projects: Project[] = [
   {
     id: "gym",
     slug: "gym-management-system",
-    num: "03",
+    num: "04",
     name: "Gym Management System",
     company: "Sparrow Softtech",
     timeline: "Jan 2025 – Sep 2026",
@@ -427,7 +492,7 @@ export const projects: Project[] = [
   {
     id: "ems",
     slug: "employee-management-system",
-    num: "04",
+    num: "05",
     name: "Employee Management System",
     company: "Sparrow Softtech",
     timeline: "Nov 2025 – Sep 2026",
@@ -463,7 +528,7 @@ export const projects: Project[] = [
   {
     id: "keyresumes",
     slug: "keyresumes-io",
-    num: "05",
+    num: "06",
     name: "keyresumes.io",
     company: "Sparrow Softtech",
     timeline: "Jun 2025 – Sep 2025",
@@ -496,7 +561,7 @@ export const projects: Project[] = [
   {
     id: "rental",
     slug: "rental-management-system",
-    num: "06",
+    num: "07",
     name: "Rental Management System",
     company: "Sparrow Softtech",
     timeline: "Aug 2024 – Dec 2024",
@@ -528,7 +593,7 @@ export const projects: Project[] = [
   {
     id: "contracts",
     slug: "contract-management-system",
-    num: "07",
+    num: "08",
     name: "Contract Management System",
     company: "Sparrow Softtech",
     timeline: "Apr 2024 – Aug 2024",
@@ -558,7 +623,7 @@ export const projects: Project[] = [
   {
     id: "bed",
     slug: "bed-configurator",
-    num: "08",
+    num: "09",
     name: "Bed Configurator",
     company: "Sparrow Softtech",
     timeline: "Jan 2024 – Mar 2024",
@@ -588,7 +653,7 @@ export const projects: Project[] = [
   {
     id: "cms",
     slug: "complaint-management-system",
-    num: "09",
+    num: "10",
     name: "Complaint Management System",
     company: "Sparrow Softtech",
     timeline: "Oct 2023 – Dec 2023",
