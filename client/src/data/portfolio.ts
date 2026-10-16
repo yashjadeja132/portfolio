@@ -288,7 +288,7 @@ export const projects: Project[] = [
     slug: "distropharma-erp",
     num: "01",
     name: "DistroPharma ERP",
-    company: "Personal project",
+    company: "Kanzariya Pharmaceutical Pvt. Ltd.",
     timeline: "Oct 2026 – Present",
     role: "Full Stack Developer",
     stack: [
