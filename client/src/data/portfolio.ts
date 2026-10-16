@@ -285,9 +285,9 @@ export const experience: ExperienceRole[] = [
 export const projects: Project[] = [
   {
     id: "erp",
-    slug: "distropharma-erp",
+    slug: "disha-erp",
     num: "01",
-    name: "DistroPharma ERP",
+    name: "Disha - ERP",
     company: "Kanzariya Pharmaceutical Pvt. Ltd.",
     timeline: "Oct 2026 – Present",
     role: "Full Stack Developer",
@@ -304,7 +304,7 @@ export const projects: Project[] = [
     description:
       "A multi-tenant ERP for pharmaceutical distributors. It covers masters, purchase, sales, stock, accounts and reports, with separate data for each company and role-based permissions.",
     problem:
-      "Pharma distributors track batches, expiry dates, free scheme goods, GST and customer credit in separate tools and spreadsheets. This causes stock mistakes, wrong GST totals and late payments. DistroPharma ERP keeps these in one system where stock and money always match.",
+      "Pharma distributors track batches, expiry dates, free scheme goods, GST and customer credit in separate tools and spreadsheets. This causes stock mistakes, wrong GST totals and late payments. Disha - ERP keeps these in one system where stock and money always match.",
     roles: ["Administrators", "Staff", "Viewers", "Custom roles"],
     modules: [
       "Party master: C&F, stockist, chemist, doctor, supplier",
@@ -332,19 +332,19 @@ export const projects: Project[] = [
     screenshots: [
       {
         src: "/projects/erp-dashboard.jpg",
-        alt: "DistroPharma ERP dashboard with sales, receivables, inventory value, low stock and near-expiry batches (demo data)",
+        alt: "Disha - ERP dashboard with sales, receivables, inventory value, low stock and near-expiry batches (demo data)",
       },
       {
         src: "/projects/erp-invoice-detail.jpg",
-        alt: "DistroPharma ERP sales invoice with batch, expiry, MRP, free quantity and IGST totals (demo data)",
+        alt: "Disha - ERP sales invoice with batch, expiry, MRP, free quantity and IGST totals (demo data)",
       },
       {
         src: "/projects/erp-stock-report.jpg",
-        alt: "DistroPharma ERP stock report with batch-wise stock, expiry status and minimum stock alerts (demo data)",
+        alt: "Disha - ERP stock report with batch-wise stock, expiry status and minimum stock alerts (demo data)",
       },
       {
         src: "/projects/erp-permissions.jpg",
-        alt: "DistroPharma ERP permission manager with view, create, edit, delete and approve rights per module (demo data)",
+        alt: "Disha - ERP permission manager with view, create, edit, delete and approve rights per module (demo data)",
       },
     ],
   },
